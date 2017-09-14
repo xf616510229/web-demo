@@ -1,0 +1,446 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>博雅互动</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: "Microsoft YaHei","SimSun";
+        }
+        .inner_c{
+            width: 1000px;
+            margin: 0 auto;
+        }
+        .header {
+            height: 58px;
+            background-color: #191D3A;
+        }
+        .header .inner_c .logo{
+            float: left;
+            padding-left: 11px;
+            padding-right: 36px;
+        }
+        .header .inner_c .nav{
+            float: left;
+        }
+        .header .inner_c .nav ul {
+            list-style: none;
+        }
+        .header .inner_c .nav ul li {
+            float: left;
+            width: 100px;
+            border-left: solid 1px #252947;
+        }
+        .header .inner_c .nav ul li.last{
+            border-right: solid 1px #252947;
+        }
+        .header .inner_c .nav ul li a{
+            text-decoration: none;
+            display: block;
+            line-height: 58px;
+            text-align: center;
+            color: #818496;
+            font-size: 14px;
+        }
+        .header .inner_c .nav ul li a:hover{
+            color: #E2E4ED;
+            background-color: #252947;
+        }
+        .header .inner_c .nav ul li a.current{
+            background-color: #252947;
+            color: #E2E4ED;
+        }
+        .header .inner_c .jrwm{
+            padding-left: 48px;
+            padding-top: 12px;
+            float: left;
+            height: 58px;
+        }
+        .header .inner_c .jrwm a{
+            display: block;
+            width: 100px;
+            height: 34px;
+            line-height: 34px;  
+            background-color: #38B774;
+            text-decoration: none;
+            font-size: 14px;
+            color: white;
+            text-align: center;
+            /*圆角边框*/
+            border-radius: 4px;
+        }
+        .banner{
+            height: 465px;
+            background: url(img/banner.jpg) no-repeat center top;
+            position: relative;
+        }
+        .banner .circles{
+            width: 120px;
+            height: 12px;
+            position: absolute;
+            bottom:20px;
+            left:50%; 
+            margin-left: -60px;
+        }
+        .banner .circles ol{
+            list-style: none;
+        }
+        .banner .circles ol li{
+            float: left;
+            width: 12px;
+            height: 12px;
+            background: url(img/dian2.png) no-repeat;
+            padding-right: 15px;
+            
+            /*鼠标放到上面，会变成小手*/
+            cursor: pointer;
+        }
+        .banner .circles ol li.last{
+            padding-right: 0px;
+        }
+        .banner .circles ol li.current{
+            background: url(img/dian1.png) no-repeat;
+        }
+        .cl{
+            height: 50px;
+            clear: both;
+        }
+        .content {
+            overflow: hidden;
+        }
+        .content .product {
+            height: 229px;
+            border-bottom: solid 1px #DBE1E7;
+            position: relative;
+        }
+        .content .product ul{
+            list-style: none;
+        }
+        .content .product ul li {
+            float: left;
+            width: 218px;
+            padding-right: 43px;
+        }
+        .content .product ul li.last{
+            width: 217px;
+            padding-right: 0px;
+        }
+        .content .product ul li p.img{
+            padding-bottom: 15px;
+        }
+        .content .product ul li img{
+            width: 100%;
+        }
+        .content .product ul li h3{
+            font-size: 14px;
+            line-height: 14px;
+            color: black;
+            font-weight: bold;
+            text-align: center;
+        }
+        .content .product ul li p.play{
+            font-size: 12px;
+            line-height: 12px;
+            color: #38B774;
+            text-align: center;
+            margin-top: 17px;
+        }
+        .content .product ul li p a{
+            color: #38B774;
+            padding-right: 10px;
+            background: url(img/sanjiaoxing.png) no-repeat center right;
+        }
+        .content .product .circles {
+            width: 117px;
+            height: 11px;
+            background-color: white;
+            position: absolute;
+            top: 223px;
+            left: 50%;
+            margin-left: -59px;
+        }
+        .content .product .circles ol{
+            list-style: none;
+        }
+        .content .product .circles ol li {
+            float: left;
+            width: 11px;
+            height: 11px;
+            margin-left: 14px;
+            background: white url(img/circle2.png) 0 0 no-repeat;
+            cursor: pointer;
+        }
+        .content .product .circles ol li.current {
+             background: white url(img/circle.png) 0 0 no-repeat;
+        }
+        .content .product .cl{
+            height: 52px;
+            float: none;
+        }
+        .content .info {
+
+        }
+        .content .info .news{
+            float: left;
+            width: 500px;
+            background: url(img/bynewsbg.jpg) 0 0 no-repeat;
+            position: relative;
+        }
+        .content .info .news .lists{
+            padding-top: 110px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .content .info .news .lists ul{
+            list-style: none;
+        }
+        .content .info .news .lists ul li {
+            line-height: 50px;
+            border-bottom: 1px solid #DBE1E7;
+        }
+        .content .info .news .lists ul li a{
+            font-size: 14px;
+            color: #444866;
+            text-decoration: none;
+        }
+        
+        .content .info .news .lists ul li span{
+            font-size: 12px;
+            color: #B6BED8;
+        }
+        /*more*/
+        .content .info .news .more{
+            width: 66px;
+            height: 28px;
+            position: absolute;
+            top: 40px;
+            left: 218px;
+            background: url(img/icons.png) -6px -5px no-repeat;
+
+            /*让a标签的内容多多空几个空格 这样链接的文字就会消失在a标签的内容中，但是仍然可以点击*/
+            text-indent: -999em;
+        }
+        .content .info .jobs{
+            float: left;
+            width: 500px;
+            height: 313px;
+            background: url(img/byhrbg3.jpg) 0 0 no-repeat;
+            position: relative;
+        }
+        .content .info .jobs .zp{
+            position: absolute;
+            top: 45px;
+            left: 81px;
+            font-size: 27px;
+            line-height: 27px;
+            color: white;
+        }
+        .content .info .jobs .zpe{
+            position: absolute;
+            top: 78px;
+            left: 81px;
+            font-size: 10px;
+            line-height: 10px;
+            color: white;
+        }
+        .content .info .jobs .zpz{
+            padding-left: 20px;
+            color: white;
+            font-size: 14px;
+            padding-top: 115px;
+        }
+        .content .info .jobs ul{
+            padding-left: 20px;
+            list-style: none;
+        }
+        .content .info .jobs ul li{
+            width: 305px;
+            line-height: 37px;
+            font-size: 14px;
+            border-bottom: 1px solid #6FDEA3;
+        }
+        .content .info .jobs ul li a{
+            color: white;
+            font-size: 12px;
+            text-decoration: none;
+        }
+        .content .info .jobs .more{
+            position: absolute;
+            top: 40px;
+            left: 218px;
+
+            width: 66px;
+            height: 28px;
+            background: red url(img/icons.png) -6px -40px no-repeat;
+
+            text-indent: -999px;
+        }
+        .cl2{
+            height: 53px;
+        }
+        .footer {
+            height: 91px;
+            background-color: #191D3A;
+            font-size: 12px;
+            color: #6C6E7E;
+            position: relative;
+        }
+        .footer .leftPart{
+            width: 260px;
+            line-height: 91px;
+            float: left;
+        }
+        .footer .leftPart a{
+            color: #6C6E7E;
+            text-decoration: none;
+        }
+        .footer .rightPart{
+            width: 740px;
+            line-height: 91px;
+            float: right;
+        }
+        .footer .rightPart img{
+            width: 36px;
+            height: 50px;
+            position: relative;
+            top:15px;
+        }
+        .footer .top {
+            width: 68px;
+            height: 29px;
+            background: url(img/top.png) 0 0 no-repeat;
+            position: absolute;
+            top: -16px;
+            right: 15px;
+            
+            text-indent: -999em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="inner_c">
+            <h1 class="logo">
+                <img src="img/logo.png"/>
+            </h1>
+            <div class="nav">
+                <ul>
+                    <li><a class="current" href="">首页</a></li>
+                    <li><a href="">博雅游戏</a></li>
+                    <li><a href="">博雅新闻</a></li>
+                    <li><a href="">关于我们</a></li>
+                    <li><a href="">客服中心</a></li>
+                    <li class="last"><a href="">投资者关系</a></li>
+                </ul>
+            </div>
+            <div class="jrwm">
+                <a href="#">加入我们</a>
+            </div>
+        </div>
+    </div>
+    <div class="banner">
+        <div class="circles">
+            <ol>
+                <li class="current"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="last"></li>
+            </ol>
+        </div>
+    </div>
+    <div class="cl"></div>
+    <div class="content inner_c">
+        <div class="product">
+            <ul>
+                <li>
+                    <p class="img"><img src="img/bpt.jpg" alt="" /></p>
+                    <h3>BPT宣传片</h3>
+                    <p class="play"><a href="#">点击播放</a></p>
+                </li>
+                <li>
+                    <p class="img"><img src="img/gamepic1.jpg" alt="" /></p>
+                    <h3>德州扑克</h3>
+                    <p class="play"><a href="#">点击播放</a></p>
+                </li>
+                <li>
+                    <p class="img"><img src="img/gamepic3.jpg" alt="" /></p>
+                    <h3>斗地主</h3>
+                    <p class="play"><a href="#">点击播放</a></p>
+                </li>
+                <li class="last">
+                    <p class="img"><img src="img/video.jpg" alt="" /></p>
+                    <h3>博雅互动宣传视频</h3>
+                    <p class="play"><a href="#">点击播放</a></p>
+                </li>
+            </ul>
+            <!-- 轮播图小圆点 -->
+            <div class="circles">
+                <ol>
+                    <li class="current"></li>
+                    <li></li>
+                    <li></li>
+                    <li class="last"></li>
+                </ol>
+            </div>
+        </div>
+        <div class="cl"></div>
+        <div class="info">
+            <div class="news">
+                <div class="lists">
+                    <ul>
+                        <li>
+                            <span>08/26</span>
+                            <a href="#">2015博雅国际扑克大赛（BPT）在澳门落幕</a>
+                        </li>
+                        <li>
+                            <span>08/26</span>
+                            <a href="#">2015博雅国际扑克大赛（BPT）在澳门落幕</a>
+                        </li>
+                        <li>
+                            <span>08/26</span>
+                            <a href="#">2015博雅国际扑克大赛（BPT）在澳门落幕</a>
+                        </li>
+                        <li>
+                            <span>08/26</span>
+                            <a href="#">2015博雅国际扑克大赛（BPT）在澳门落幕</a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="#" class="more">more</a>
+            </div>
+            <div class="jobs">
+                <h1 class="zp">专场招聘</h1>
+                <p class="zpe">BOYAA JOBS</p>
+                <a href="#" class="more">MORE</a>
+                <p class="zpz">专场招聘岗位：</p>
+                <ul>
+                    <li><a href="#">PHP开发工程师</a></li>
+                    <li><a href="#">C++开发工程师</a></li>
+                    <li><a href="#">Web开发工程师</a></li>
+                    <li><a href="#">大数据开发工程师</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="cl2"></div>
+    <div class="footer">
+        <div class="inner_c">
+            <div class="leftPart">
+                <a href="#">网站地图</a>
+                    |
+                <a href="#">免责声明</a>
+            </div>
+            <div class="rightPart">
+                @Copyright © 2004 - 2014 博雅互动(Boyaa Interactive) 粤ICP备88888888号 增值电信业务许可证：粤B2-Feathers
+                <img src="img/govIcon.gif" alt="" />
+            </div>
+        </div>
+        <a href="#" class="top">TOP</a>
+    </div>
+</body> 
+</html>

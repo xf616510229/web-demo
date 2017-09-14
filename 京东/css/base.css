@@ -1,0 +1,601 @@
+/*公共样式*/
+
+@charset "UTF-8";
+/*CSS初始化*/
+
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset, img, input, button {
+    border: none;
+    padding: 0;
+    margin: 0;
+    /*去除默认的边框样式*/
+    outline-style: none;
+    /*
+        注： 在浏览器里，当鼠标点击或使用Tab键让一个链接或者一个radio获得焦点的时候，该元素将会被一个轮廓虚线框围绕。这个轮廓虚线框就是 outline。
+        完全不同于border
+    */
+}
+
+ul, ol {
+    list-style: none;
+}
+
+input {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: "SimSun", "宋体";
+}
+
+select, input {
+    vertical-align: middle;
+    /*  将下拉选择列表选择标签与输入标签中的文本内容的垂直对其的方式
+        middle 把此元素放置在父元素的中部。
+        ，标准流默认为baseline（将子元素放到父元素的基线上）
+    */
+}
+
+select, input, textarea {
+    font-size: 12px;
+    margin: 0;
+}
+
+textarea {
+    resize: none;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+body {
+    font: 12px/150% Arial, Verdana, "\5b8b\4f53"; /*最后一个为宋体 unicode */
+    color: #666;
+    background-color: #fff;
+}
+
+/*清除浮动*/
+.clearfix:before, .clearfix:after {
+    content: '';
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1; /*IE6、7*/
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #C81623;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-decoration: none;
+    font-weight: normal; /*让标题的文字和父元素一样大*/
+    font-size: 100%;
+}
+
+/* 删除线、斜体、强调去除样式*/
+s, i, em {
+    font-style: normal;
+    text-decoration: none;
+}
+
+.col-red {
+    color: #C81623 !important;
+}
+
+/*公共类*/
+
+/*版心*/
+.w {
+    width: 1210px;
+    margin: 0 auto;
+}
+
+/*浮动相关*/
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+/*文本水平居左*/
+.al {
+    text-align: left;
+}
+
+.ar {
+    text-align: right;
+}
+
+.ac {
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}
+
+/*弹出登陆框部分*/
+.mask {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    z-index: 999;
+
+    display: none;
+}
+
+.box {
+    width: 400px;
+    height: 250px;
+    background-color: #fff;
+    position: fixed;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    margin: -200px 0 0 -125px;
+
+    display: none;
+}
+
+.box span {
+    position: absolute;
+    font-size: 15px;
+    right: 10px;
+    top:10px;
+    cursor: pointer;
+}
+
+
+
+/*==========头部导航开始  shortcut可以解释为快捷方式 与导航栏的语义类似*/
+.shortcut {
+    height: 30px;
+    line-height: 30px;
+    background-color: #F1F1F1;
+}
+
+.shortcut .dt {
+    position: relative;
+    /*设置右padding 再右padding上使用绝对定位设置一个盒子，用来放小箭头*/
+    padding: 0 21px 0 10px;
+}
+
+/*----------包裹小箭头外盒子绘制*/
+.dt i {
+    display: block;
+    width: 21px;
+    height: 5px;
+    text-align: center;
+
+    position: absolute; /*子绝父相*/
+    top: 13px;
+    right: 0;
+
+    overflow: hidden;
+}
+
+.dt s {
+    /*****设置小箭头的样式*/
+    /*i
+    font-weight 400 .700=bold normal为不加粗
+    font-size/line-height
+    font-family
+    */
+    font: 9px/9px "SimSun";
+
+    padding-left: 6px;
+
+    position: absolute; /*子绝父相*/
+    top: -5px;
+    left: 0;
+}
+
+/**
+为什么使用子绝父相？而不是用子绝父绝？
+因为绝对定位不占位置，如果父亲不占位置，那么他下面的元素就会占领他的位置，从而影响了页面的布局
+
+比如：带箭头的横向列表
+ */
+/*-----------------小箭头绘制结束*/
+
+/*右侧ul*/
+.fr li {
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.fr .line {
+    width: 1px;
+    height: 12px;
+    background-color: #dddddd;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 9px;
+}
+
+/*手机京东 小手机图标*/
+.shortcut .icon {
+    padding-left: 25px;
+}
+
+.icon em {
+    width: 15px;
+    height: 20px;
+    background: url(../images/sprite.png) 0 0 no-repeat;
+
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+/*顶部广告条*/
+.topbanner {
+    background-color: #8A25C6;
+}
+
+.topbanner .w {
+    position: relative;
+}
+
+.close-banner {
+    width: 19px;
+    height: 19px;
+    background: url(../images/close.png) 0 0 no-repeat;
+
+    position: absolute;
+    top: 5px;
+    right: 0;
+}
+
+.close-banner:hover {
+    background: url(../images/close.png) 0 -19px no-repeat;
+}
+
+/*logo search 购物车*/
+.logo {
+    padding-top: 25px;
+    width: 360px;
+    height: 60px;
+    position: relative;
+}
+
+.jd-a {
+    display: block;
+    width: 270px;
+    height: 60px;
+    text-indent: -2000em;
+    background: url(../images/logo.png) no-repeat;
+}
+
+.db11 {
+    width: 180px;
+    height: 80px;
+    position: absolute;
+    top: 10px;
+    left: 168px;
+    background: url(../images/dong.gif) no-repeat;
+}
+
+.db11 a {
+    display: block;
+    width: 180px;
+    height: 80px;
+}
+
+.search {
+    width: 538px;
+    height: 36px;
+    padding-top: 25px;
+}
+
+.search input {
+    width: 450px;
+    height: 32px;
+    padding-left: 4px;
+    border: 2px solid #B61D1D;
+    font-size: 12px;
+    font-family: "Microsoft YaHei";
+    color: #666;
+}
+
+.search button {
+    width: 80px;
+    height: 36px;
+    background-color: #B61D1D;
+    color: #ffffff;
+    font: 16px/32px "Microsoft YaHei";
+
+    cursor: pointer;
+    /*
+        cursor:default; 小白 
+        cursor:move;移动
+        cursor:text;文本
+    */
+}
+
+.car {
+    padding: 0 37px 0 43px;
+    color: #666666;
+    font: 12px/34px "Microsoft YaHei";
+    border: 1px solid #DFDFDF;
+    float: right;
+    margin: 25px 65px 0 0;
+
+    position: relative;
+}
+
+.car em {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    background: url(../images/sprite.png) -1px -59px no-repeat;
+
+    width: 16px;
+    height: 13px;
+}
+
+.car code {
+    position: absolute;
+    top: 0;
+    left: 123px;
+    color: #666666;
+    font: 400 13px/34px "SimSun";
+}
+
+.car .count {
+    width: 16px;
+    height: 14px;
+    background-color: #BC1942;
+    position: absolute;
+    top: -6px;
+    left: 106px;
+
+    color: #ffffff;
+
+    /*注意！！！！
+      该元素继承了一个34的行高
+      所以字体下坠了
+    */
+    font: 700 9px/14px "Microsoft YaHei";
+    text-align: center;
+    /*
+        css3
+        border-radio:从左上开始 顺时针
+    */
+    border-radius: 50% 50% 50% 0;
+}
+
+.hotwords {
+    font: 12px/18px "Microsoft YaHei";
+    padding-top: 6px;
+}
+
+.hotwords li {
+    float: left;
+    padding-right: 10px;
+}
+
+/*==========头部结束*/
+/*--------------nav开始*/
+
+.jd-nav {
+    width: 100%;
+    height: 44px;
+    border-bottom: solid 2px #BB1941;
+}
+
+.dropdown {
+    width: 210px;
+    height: 44px;
+    background-color: #B1191A;
+    font: 13px/44px "Microsoft YaHei";
+    position: relative;
+    z-index: 10;
+}
+
+.dropdown dt {
+    height: 44px;
+}
+
+.dropdown dt a {
+    display: block;
+    height: 44px;
+    font: 400 15px/44px "Microsoft YaHei";
+    background: #B1191A;
+    color: #ffffff;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dropdown dd {
+    border-left: 1px solid #B61D1D;
+}
+
+.dropdown dd a {
+    display: block;
+    height: 31px;
+    line-height: 31px;
+    color: #ffffff;
+    background: #C81623;
+    padding-left: 10px;
+    font: 15px/31px "Microsoft YaHei";
+}
+
+.dropdown dd a em {
+    float: right;
+    padding-right: 10px;
+}
+
+.navitem li {
+    width: 85px;
+    height: 44px;
+    float: left;
+    color: #333;
+    font: 14px/44px "Microsoft YaHei";
+}
+
+.navitem li a {
+    width: 85px;
+    height: 44px;
+    display: block;
+    text-align: center;
+}
+
+/*!*再这里写color 前面的hover则无效  因为顺序问题 link visited hover active*!
+.navitem li a:hover{
+    color: #C81623;
+}*/
+
+.navitem .new {
+    background: url(../images/new.jpg) right top no-repeat;
+}
+
+.bike {
+    width: 140px;
+    height: 44px;
+}
+
+.bike a {
+    display: block;
+    width: 140px;
+    height: 44px;
+    background: url(../images/bike.jpg) no-repeat;
+    text-indent: -9999px;
+}
+
+/*--------------nav结束*/
+
+/*=======底部开始！！！！！！！！！！！！*/
+
+.jd-footer {
+}
+
+.slogen {
+    position: relative;
+    height: 54px;
+    padding: 20px 0;
+    background-color: #f5f5f5;
+}
+
+.slogen1 {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    background: url(../images/slogen1.png) 0 0 no-repeat;
+    margin-left: -608px;
+    width: 220px;
+    height: 54px;
+}
+
+.slogen2 {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    background: url(../images/slogen2.png) 0 0 no-repeat;
+    margin-left: -304px;
+    width: 220px;
+    height: 54px;
+}
+
+.slogen3 {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    background: url(../images/slogen3.png) 0 0 no-repeat;
+    margin-left: -2px;
+    width: 302px;
+    height: 54px;
+}
+
+.slogen4 {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    background: url(../images/slogen4.png) 0 0 no-repeat;
+    margin-left: 304px;
+    width: 220px;
+    height: 54px;
+}
+
+.shopping {
+    padding-top: 7px;
+    padding-bottom: 36px;
+    border-bottom: solid 1px #E5E5E5;
+}
+
+.shopping dt,
+.coverage h6 {
+    font: 15px/15px "Microsoft YaHei";
+    width: 198px;
+    height: 29px;
+    padding-top: 20px;
+}
+
+.shopping dd {
+    font: 12px/12px "SimSun";
+    width: 198px;
+    height: 20px;
+}
+
+.coverage {
+    width: 220px;
+    height: 170px;
+    background: url(../images/china.png) left bottom;
+}
+
+.coverage p {
+    line-height: 18px;
+}
+
+.coverage .looklook {
+    text-align: right;
+    position: static;
+}
+
+.links {
+    width: 810px;
+    padding-top: 17px;
+}
+
+.links a {
+    display: block;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.copyright {
+    text-align: center;
+    line-height: 18px;
+}
+
+.message {
+    text-align: center;
+    padding-top: 10px;
+}
+
+/*底部结束*/
+
