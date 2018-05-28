@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>text-overflow word-wrap</title>
+    <style>
+        .p1 {
+            width: 100px;
+            /*前提 文字不能换行  文字溢出部分不显示*/
+            white-space: nowrap;
+            overflow: hidden;
+            /*溢出部分用省略号代替*/
+            text-overflow: ellipsis;
+        }
+
+        .p2 {
+            width: 100px;
+            /*前提 文字不能换行  文字溢出部分不显示*/
+            white-space: nowrap;
+            overflow: hidden;
+            /*溢出部分背剪切掉*/
+            text-overflow: clip;
+        }
+
+        .p3 {
+            width: 100px;
+            /*默认值*/
+            word-wrap: normal;
+        }
+
+        .p4 {
+            width: 100px;
+            /*break-word设置在长单词或 URL地址内部进行换行，此属性不常用，用浏览器默认值即可。*/
+            word-wrap: break-word;
+        }
+
+    </style>
+</head>
+<body>
+
+<!--
+
+text-overflow用来设置是否使用一个省略标记（...）标示对象内文本的溢出。
+
+
+word wrap 用来判断如何换行
+-->
+
+
+<p class="p1">我是文字撒！！！！！！！！！！！！</p>
+<p class="p2">我是文字撒！！！！！！！！！！！！</p>
+<p class="p3">i am a student! i'm so cool!</p>
+<p class="p4">i am a student! i'm so cool!</p>
+</body>
+</html>

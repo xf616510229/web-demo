@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设置内容</title>
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script>
+        $(function () {
+            // 1. text()
+            $("ol > li:eq(2)").text("我要学习");
+            // 2. html()
+            $("ol > li:eq(2)").html("我要学习");
+            // 3. val()
+            $("#test").val("我要学习");
+        });
+    </script>
+</head>
+<body>
+<p>
+    在JQuery中，有三种方法可以获取html的内容，分别是
+</p>
+<ol>
+    <li> text() - 设置或返回所选元素的文本内容 </li>
+    <li> html() - 设置或返回所选元素的内容（包括 HTML 标记）</li>
+    <li> val() - 设置或返回表单字段的<b>值</b> </li>
+</ol>
+<form action="#">
+    <input id="test" type="text" value="i am text">
+</form>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>background-clip</title>
+    <style>
+        .d1 {
+            width: 100px;
+            height: 100px;
+            border: 10px dashed red;
+            padding: 10px;
+            margin: 10px;
+            background: url(bgc.jpg) no-repeat;
+            background-origin: border-box;
+            background-clip: border-box;
+        }
+        .d2 {
+            width: 100px;
+            height: 100px;
+            border: 10px dashed red;
+            padding: 10px;
+            margin: 10px;
+            background: url(bgc.jpg) no-repeat;
+            background-origin: border-box;
+            background-clip: padding-box;
+        }
+        .d3 {
+            width: 100px;
+            height: 100px;
+            border: 10px dashed red;
+            padding: 10px;
+            margin: 10px;
+            background: url(bgc.jpg) no-repeat;
+            background-origin:  border-box;
+            background-clip: content-box;
+        }
+
+        .d4 {
+            width: 100px;
+            height: 100px;
+            border: 10px dashed red;
+            padding: 10px;
+            margin: 10px;
+            background: url(bgc.jpg) no-repeat;
+            background-origin:  border-box;
+            /*no-clip*/
+        }
+    </style>
+</head>
+<body>
+
+<!--
+
+对背景图片进行裁剪
+
+background-clip ： border-box | padding-box | content-box | no-clip
+
+从边框、或内填充，或者内容区域向外裁剪背景
+-->
+
+
+
+<div class="d1"></div>
+<div class="d2"></div>
+<div class="d3"></div>
+<div class="d4"></div>
+
+
+
+</body>
+</html>

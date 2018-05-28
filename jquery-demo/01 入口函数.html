@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>入口函数</title>
+    <script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script>
+        var div = document.getElementsByTagName("div")[0];
+        alert(div);
+
+        // 入口函数 相当于window.onload
+        $(document).ready(function () {
+            var div = document.getElementsByTagName("div")[0];
+            alert(div);
+        });
+
+        // 写法二
+        $(function(){
+            var div = document.getElementsByTagName("div")[0];
+            alert(div);
+        });
+
+
+    </script>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

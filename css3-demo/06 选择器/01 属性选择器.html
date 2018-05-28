@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性选择器</title>
+    <style>
+        /*以http开头*/
+        a[href^="http"] {
+            color: saddlebrown;
+            background-color: red;
+        }
+
+        /*以com结尾*/
+        a[href$="com"] {
+            color: rebeccapurple;
+            background-color: wheat;
+        }
+
+        /*包含#*/
+        a[href*="#"] {
+            color: skyblue;
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<!--
+css3 在css2的基础上，对选择器进行了扩展
+
+E[attr^="val"] 选择匹配元素E，且E元素的attr属性值是value开头
+E[attr$="val"] 选择匹配元素E，且E元素的attr属性值是value结尾
+E[attr*="val"] 选择匹配元素E，且E元素的attr属性值包含value
+
+
+-->
+
+
+<a href="http://www.baidu.com/haha">我是链接</a>
+<a href="www.baidu.com">我是链接2</a>
+<a href="www.baidu.com#h1">我是链接3</a>
+
+</body>
+</html>

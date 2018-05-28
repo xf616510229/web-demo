@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>:first-last</title>
+    <style>
+
+
+        ol>li:first-child {
+            color: chocolate;
+        }
+
+
+        ol>li:last-child {
+            color: red;
+        }
+    </style>
+</head>
+
+<!--
+
+:first-child
+
+选择该元素父元素的第一个子元素
+即同级元素的第一个元素
+
+:last-child 类似
+
+
+
+应用：
+在li的排版中，通常第一个元素和最后一个元素没有左边距/边界   右边距/边界，可以使用这个方式改变。
+
+而无须使用js去操作
+
+-->
+
+
+<body>
+
+
+
+
+<ol>
+    <li>第一个子元素</li>
+    <li>第二个子元素</li>
+    <li>第二个子元素</li>
+</ol>
+
+
+
+
+
+</body>
+</html>

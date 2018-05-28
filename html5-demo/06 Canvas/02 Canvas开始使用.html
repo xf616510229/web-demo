@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>开始使用</title>
+</head>
+<body>
+
+<!--添加Canvas元素 （在页面中添加一个画布）-->
+<canvas id="myCanvas" width="200px" height="200px"></canvas>
+<script>
+    // 通过js来绘制图像
+    var c = document.getElementById("myCanvas");
+    // 获取context对象，context对象是内建的H5对象，拥有多种绘制路径、图形、字符的方法
+    var cxt = c.getContext("2d");
+    cxt.fillStyle = "#FF0000";
+    // 参数为坐标，坐标的表示和Android屏幕坐标相同，Canvas左上角为 （0，0)
+    cxt.fillRect(0, 0, 150, 75);
+</script>
+</body>
+</html>

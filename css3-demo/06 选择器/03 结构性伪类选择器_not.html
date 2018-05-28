@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>:not</title>
+    <style>
+        div {
+            padding: 10px 20px;
+            min-height: 50px;
+        }
+
+        /*注意这里有小括号*/
+        div:not([id="footer"]) {
+            background: orange;
+        }
+    </style>
+</head>
+
+<!--
+
+:not 否定选择器
+可以选择除某个元素之外的所有元素
+
+-->
+
+
+<body>
+<div id="header">页头</div>
+<div id="page">页体</div>
+<div id="footer">页脚</div>
+</body>
+</html>

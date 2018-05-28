@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>边框阴影效果</title>
+    <style>
+        .y1 {
+            width: 100px;
+            height: 100px;
+            background-color: salmon;
+            margin: 20px;
+            box-shadow: 0 0 6px black;
+        }
+
+        .y2 {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            margin: 20px;
+            box-shadow: 0 0 12px black;
+        }
+
+        .y3 {
+            width: 100px;
+            height: 100px;
+            background-color: mediumspringgreen;
+            margin: 20px;
+            box-shadow: 0 0 6px 6px black;
+        }
+
+        .y4 {
+            width: 100px;
+            height: 100px;
+            background-color: forestgreen;
+            margin: 20px;
+            box-shadow: 4px 0 6px black;
+        }
+
+        .y5 {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            margin: 20px;
+            box-shadow: -4px 0 6px black;
+        }
+
+        /*内阴影*/
+        .y6 {
+            width: 100px;
+            height: 100px;
+            background-color: lemonchiffon;
+            margin: 20px;
+            box-shadow: 0 0 6px red inset;
+        }
+
+        /*多阴影*/
+        .y7 {
+            width: 100px;
+            height: 100px;
+            background-color: wheat;
+            box-shadow: 0 0 6px red inset, 10px -10px 6px yellow;
+        }
+    </style>
+</head>
+<body>
+
+<!--
+
+box-shadow: X轴偏移量 Y轴偏移量 [阴影模糊半径] [阴影扩展半径] [阴影颜色] [投影方式];
+
+
+X轴偏移量： 必需，水平阴影位置，可以为负值
+轴偏移量： 必需，Y垂直阴影位置，可以为负值
+阴影模糊半径：模糊距离
+阴影拓展半径：阴影的尺寸
+阴影颜色：
+投影方式：insert为内部阴影，不设置则为外部阴影
+-->
+
+<div class="y1">
+
+</div>
+
+
+<div class="y2">
+
+</div>
+
+
+<div class="y3">
+
+</div>
+
+<div class="y4">
+
+</div>
+
+<div class="y5">
+
+</div>
+
+
+<div class="y6">
+
+</div>
+
+<div class="y7">
+
+</div>
+
+</body>
+</html>

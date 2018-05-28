@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>background-origin</title>
+    <style>
+        .d1 {
+            width: 100px;
+            height: 100px;
+            border: 10px dashed red;
+            padding: 10px;
+            margin: 10px;
+            background: url(bgc.jpg) no-repeat;
+            background-origin: border-box;
+        }
+        .d2 {
+            width: 100px;
+            height: 100px;
+            border: 10px dashed red;
+            padding: 10px;
+            margin: 10px;
+            background: url(bgc.jpg) no-repeat;
+            background-origin: padding-box;
+        }
+        .d3 {
+            width: 100px;
+            height: 100px;
+            border: 10px dashed red;
+            padding: 10px;
+            margin: 10px;
+            background: url(bgc.jpg) no-repeat;
+            background-origin: content-box;
+        }
+    </style>
+</head>
+<body>
+
+<!--
+
+设置元素背景图片的原始起始位置。
+
+background-origin ： border-box | padding-box | content-box;
+
+要想上述属性有效，需要设置为no-repeat
+
+
+1. border-box 背景图从边界开始
+2. padding-box 背景图从padding开始
+3. content-box 背景图从内容区域开始
+
+-->
+
+
+
+<div class="d1"></div>
+<div class="d2"></div>
+<div class="d3"></div>
+
+
+</body>
+</html>

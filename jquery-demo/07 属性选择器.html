@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性选择器</title>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 将含有href属性的a标签的color更改为红色
+//            $("a[href]").css("color", "red");
+            // [attr=value] 将有href并且值为feathers.me的标签的字体大小改为40px
+//            $("a[href='http://feathers.me']").css("font-size","40px");
+            // [attr!=value] 将href值不为feathers.me的标签的字体大小改为20px
+//            $("a[href!='http://feathers.me']").css("font-size","20px");
+            // [attr^=value] 选择href值以http开头的元素
+//            $("a[href^='http']").css("font-size","40px");
+            // [attr$=value] 选择href值以cn为结尾的元素
+//            $("a[href$='cn']").css("font-size","40px");
+            // [attr*=value] 选择href值包含a字符的元素，可以是中文也可以是英文
+//            $("a[href*='a']").css("font-size","40px");
+            // [attr][attr] 都满足 交集
+            $("a[href][title*='的']").css("font-size","40px");
+        });
+    </script>
+</head>
+<body>
+<div class="divItem">
+    <!-- 注意 title属性是鼠标停留在元素上时，所显示的文本-->
+    <a href="http：//www.baidu.com" title="谁啊？">百度</a>
+    <a href="feathers.me" title="我是title的内容">Feathers</a>
+    <a href="http://sina.com.cn">新浪</a>
+    <a>我没有href</a>
+</div>
+</body>
+</html>

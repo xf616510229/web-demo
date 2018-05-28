@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>嵌入字体</title>
+    <style type="text/css">
+        @font-face {
+            font-family: "MOOC Font";
+            /*引入字体文件
+
+            注意：字体文件根目录必需和网站的根目录相同
+
+            一般中文网站都不建议使用自定义字体，因为中文字体一般有很大的内存，加载起来会很慢。英文网站只有26的字母需要定义，体积小的多。
+            */
+            src: url("./Amaranth-BoldItalic.otf");
+        }
+        .demo {
+            width: 340px;
+            padding: 30px;
+            color: #566F89;
+            background: #000;
+            font-size:58px;
+            font-family: "MOOC Font";
+        }
+    </style>
+</head>
+<body>
+<div class="demo">IMOOC</div>
+</body>
+</html>
+
+<!--
+
+@font-face可以加载服务器端的字体文件，让浏览器使用电脑没有安装的字体
+
+-->

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新的输入表单标签</title>
+</head>
+<body>
+<form action="#">
+    <!--email-->
+    <input type="email" name="user_email">
+    <!--url-->
+    <input type="url">
+    <!--number    最大值 100 最小值 0 step 必须是5的倍数 默认值50-->
+    <input type="number" max="100" min="0" step="5" value="50">
+    <!--range 一定范围内数字值的输入域-->
+    <input type="range" min="1" max="10">
+
+    <!--
+    range 的属性和number相同，而且看起来二者并没有什么不同
+    但是二者的语义不同,并且后者表现为水平滚动条
+    -->
+    
+    <!-- 日期选择器 date-->
+    <input type="date">
+    <!--
+    除了 date 还有类似的 month,week,time,datetime,datetime-local
+    -->
+
+    <!--search-->
+    <input type="search" VALUE="I AM SEARCH">
+
+    <input type="submit" />
+    <!-- 会有默认的效果提示 -->
+</form>
+</body>
+</html>

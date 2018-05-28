@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片边框</title>
+    <style>
+        .b1 {
+            width: 210px;
+            height: 210px;
+            background-color: skyblue;
+            margin: 70px;
+            /*使用border-image需要先使用border属性，保证元素有边框*/
+            border: 70px solid #ddd;
+            border-image: url(borderImage.jpg) 70 repeat;
+        }
+
+        .b2 {
+            width: 210px;
+            height: 210px;
+            background-color: skyblue;
+            margin: 70px;
+            border: 70px solid #ddd;
+            border-image: url(borderImage.jpg) 70 stretch;
+        }
+
+        .b3 {
+            width: 250px;
+            height: 100px;
+            background-color: skyblue;
+            margin: 70px;
+            border: 70px solid #ddd;
+            border-image: url(borderImage.jpg) 70 round;
+        }
+
+    </style>
+</head>
+<body>
+<!--
+border-image:url(xx.jpg) 10px 20px no-repeat;
+
+在css2.1的版本，元素的边框只能是颜色，而css3中，可以使用border-image指定图片作为元素的边框
+
+-->
+
+<div class="b1">重复</div>
+<div class="b2">拉伸</div>
+<div class="b3">圆满的铺满</div>
+
+</body>
+</html>

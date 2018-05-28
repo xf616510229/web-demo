@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多样式设置</title>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 200px;
+            background-color: darkgoldenrod;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            var div = $("div");
+            // 获取div的样式
+            console.log(div.css("background-color"));
+            // 设置div样式单
+            div.css("border", "solid 2px red");
+            // 设置div样式多(多属性传入json对象)
+            div.css({
+                "position": "absolute"
+                ,
+                "top": "100px",
+                "left": "200px"
+            });
+        });
+    </script>
+</head>
+<body>
+<div>
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本选择器</title>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 1. id 选择器
+            var demo = $("#demo");
+            demo.css("color", "red");
+            // 2. 类选择器
+            var liItem = $(".liItem");
+            liItem.css("background-color", "green");
+            // 3. 交集选择器
+            var di = $("div.aa");
+            di.css("font-size", "25px");
+            // 4. 并集选择器
+            var db = $("div, #b03");
+            db.css("font-weight", "700");
+            // 5. 通配符选择器
+            var x = $("*");
+            x.css("border","solid 1px yellow");
+        });
+    </script>
+</head>
+<body>
+<ul>
+    <li class="liItem aa" id="demo">兄弟很多1</li>
+    <li>兄弟很多2</li>
+    <li id="b03">兄弟很多3</li>
+    <li>兄弟很多4</li>
+    <li class="liItem">兄弟很多5</li>
+    <li id="demo1">兄弟很多6</li>
+    <li>兄弟很多7</li>
+    <li class="liItem">兄弟很多8</li>
+</ul>
+
+<div class="aa">
+    我是div的内容
+</div>
+</body>
+</html>

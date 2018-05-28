@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除操作</title>
+    <script src="../js/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>item<i>0</i></li>
+        <li>item<i>1</i></li>
+        <li>item<i>2</i></li>
+        <li>item<i>3</i></li>
+        <li>item<i>4</i></li>
+    </ul>
+</body>
+</html>
+<script>
+    /**
+     * remove() - 删除被选元素（及其子元素）
+     * empty() - 从被选元素中删除子元素
+     */
+    $("ul li:eq(2)").remove();
+
+    $("ul li:eq(3)").empty(); // 不仅仅元素会被删除，文本也会被删除
+</script>

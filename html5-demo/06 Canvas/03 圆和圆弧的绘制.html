@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制 line</title>
+</head>
+<body>
+<canvas id="myCanvas" width="400px" height="400px"></canvas>
+</body>
+</html>
+<script>
+    var canvas = document.getElementById("myCanvas");
+    // 获取context对象，context对象是H5的内建对象，拥有绘制路径，图形，文字等功能
+    var ctx = canvas.getContext("2d");
+    // 起始一条新的路径，或者重置当前的路径
+    ctx.beginPath();
+    // 绘制外侧最大的圆
+    ctx.arc(200, 200, 200, 0.5 * Math.PI, 1.5 * Math.PI, false);
+    // 绘制两个半圆弧
+    ctx.arc(200, 100, 100, -0.5 * Math.PI, 0.5 * Math.PI, false);
+    ctx.arc(200, 300, 100, 1.5 * Math.PI, 0.5 * Math.PI, true);
+    // 闭合路径
+    ctx.closePath();
+    // 设置填充颜色黑色
+    ctx.fillStyle = "black";
+    // 填充
+    ctx.fill();
+
+    // 绘制两个小圆
+    ctx.beginPath();
+    ctx.arc(200, 100, 25, 0, 2 * Math.PI, false);
+    ctx.fillStyle = "white";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(200, 300, 25, 0, 2 * Math.PI, false);
+    ctx.fillStyle = "black";
+    ctx.fill();
+</script>

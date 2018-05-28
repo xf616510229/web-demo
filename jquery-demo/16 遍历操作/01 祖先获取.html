@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取祖先</title>
+    <script src="../js/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+<ul>
+    <li>
+        <ul>
+            <li>01item</li>
+            <li>02item</li>
+        </ul>
+    </li>
+    <li>
+        <ul>
+            <li id="i3">03item</li>
+            <li>04item</li>
+        </ul>
+    </li>
+    <li>
+        <ul>
+            <li>05item</li>
+            <li>06item</li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>
+<script>
+    // 获取直接父元素
+    $("#i3").parent().css("background-color", "skyblue");
+
+    // 获取所有级别的父元素
+    // $("#i3").parents().css("background-color","skyblue");
+
+    /**
+     parentsUntil() 方法返回介于两个给定元素之间的所有祖先元素。
+     下面的例子返回介于 <span> 与 <div> 元素之间的所有祖先元素：
+     实例
+     $(document).ready(function(){
+        $("span").parentsUntil("div");
+    });
+     **/
+</script>

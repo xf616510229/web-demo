@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>first-of-type</title>
+
+    <style>
+
+        div, p {
+            border: 1px solid rebeccapurple;
+        }
+
+        .d1 {
+            width: 200px;
+            height: 200px;
+        }
+
+        .d2 {
+            width: 200px;
+            height: 50px;
+        }
+
+        p {
+            width: 200px;
+            height: 50px;
+        }
+
+        .d3 {
+            width: 200px;
+            height: 50px;
+        }
+
+        /*first-child*/
+        .d1 > *:first-child {
+            color: red;
+        }
+
+        /* first-of-type */
+        .d1 > p:first-of-type {
+            background-color: greenyellow;
+        }
+
+    </style>
+</head>
+<body>
+
+<!--
+first-of-type      和   first-child   的区别
+
+
+first-child： 指定该元素的父元素的第一个子元素 并且这个子元素必须为指定类型，否则不会被选中
+
+first-of-type: 指定该元素的父元素的第一个指定类型的元素
+
+
+
+last-child和last-of-type 同上面类似，这里不再考虑
+
+-->
+
+
+<div class="d1">
+    <div class="d2">div 1</div>
+    <p class="p1"> p 1</p>
+    <p class="p2">p 2</p>
+    <div class="d3">div 2</div>
+</div>
+
+
+</body>
+</html>

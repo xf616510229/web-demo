@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取后代</title>
+    <script src="../js/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+<ul>
+    <li>
+        <ul>
+            <li>01item</li>
+            <li>02item</li>
+        </ul>
+    </li>
+    <li>
+        <ul id="u1">
+            <li>03item</li>
+            <li>04item</li>
+        </ul>
+    </li>
+    <li>
+        <ul>
+            <li>05item</li>
+            <li>06item</li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>
+<script>
+    // 所有后代
+    $("#u1").children().css("background-color", "skyblue");
+
+    // 获取指定的元素
+    $("#u1").find("li:eq(0)").css("background-color", "orange");
+</script>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animate test</title>
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: cornflowerblue;
+            position: absolute;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("#btn1").click(function () {
+                $("#box1").animate({
+                    left: '250px',
+                    opacity: '0.5',
+                    height: '+=150px',/*这里使用相对值 将高度增加150*/
+                    width: '150px' /*这里使用绝对值，将宽度变为150*/
+                }, 500, function () {
+                    alert("动画结束，我是回调"); //Callback 函数在当前动画 100% 完成之后执行
+                });
+            });
+
+            $("#btn2").click(function () {
+                $("#box2").animate({
+                    top: '200px',
+                    opacity: 'toggle',/*使用预定义的值 有三种：show hide toggle 滑动动画也是这样*/
+                    height: 'toggle',
+                    width: 'toggle'
+                }, "fast", function () {
+                    alert("动画结束，我是回调");
+                });
+            });
+
+            /**
+             * 动画队列
+             */
+            $("#btn3").click(function () {
+                var box = $("#box3");
+                box.animate({height:'300px',opacity:'0.4'},"slow");
+                box.animate({width:'300px',opacity:'0.8'},"slow");
+                box.animate({height:'100px',opacity:'0.4'},"slow");
+                box.animate({width:'100px',opacity:'0.8'},"slow");
+            });
+        });
+
+
+
+    </script>
+</head>
+<body>
+<button id="btn1">开始运动-匀速动画</button>
+<div class="box" id="box1"></div>
+<button id="btn2">开始运动-匀速动画</button>
+<div class="box" id="box2"></div>
+<button id="btn3">开始运动-匀速动画</button>
+<div class="box" id="box3"></div>
+</body>
+</html>

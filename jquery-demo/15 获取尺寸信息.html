@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取尺寸信息</title>
+    <script src="./js/jquery-1.11.1.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            margin: 100px;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: saddlebrown;
+            padding: 20px;
+            margin: 20px;
+            border: solid 10px firebrick;
+        }
+
+        .box div {
+            width: 30px;
+            height: 30px;
+            padding:20px;
+            margin: 20px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="box"></div>
+</div>
+</body>
+</html>
+<script>
+    // 返回元素的宽度和高度，不包括border margin padding
+    console.log("width():" + $(".box:first").width());
+    console.log("height():" + $(".box:first").height());
+
+    // 返回元素的宽度和高度，包含padding
+    console.log("innerWidth():" + $(".box:first").innerWidth());
+    console.log("innerHeight():" + $(".box:first").innerHeight());
+
+    // 返回元素的宽度和高度，包含padding、border
+    console.log("outerWidth():" + $(".box:first").outerWidth());
+    console.log("outerWidth():" + $(".box:first").outerHeight());
+
+    // 返回元素的宽度和高度，包含padding、border、margin
+    console.log("outerWidth():" + $(".box:first").outerWidth(true));
+    console.log("outerWidth():" + $(".box:first").outerHeight(true));
+
+    // 返回窗口的高度和宽度
+    console.log("window width:" + $(window).width());
+    console.log("window height:" + $(window).height());
+
+    // 返回文档的高度和宽度,body设置的margin也会包含，这里测量的是整个html标签的高度和宽度
+    console.log("doc width:" + $(document).width());
+    console.log("doc height:" + $(document).height());
+
+    // 注意： 尺寸设置
+    /*
+    $("button").click(function(){
+        $("#div1").width(500).height(500);
+    });
+    */
+</script>

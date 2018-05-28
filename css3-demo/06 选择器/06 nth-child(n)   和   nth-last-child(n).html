@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>:nth</title>
+    <style>
+
+        ol>li:nth-child(2n) {
+            background-color: greenyellow;
+        }
+
+
+
+        /*倒数第五项的字体颜色为红色*/
+        ol>li:nth-last-child(5) {
+            color: red;
+        }
+    </style>
+</head>
+
+<!--
+
+“:nth-child(n)”选择器用来定位某个父元素的一个或多个特定的子元素。
+其中“n”是其参数，而且可以是整数值(1,2,3,4)，也可以是表达式(2n+1、-n+5)和关键词(odd、even)，但参数n的起始值始终是1，而不是0。
+也就是说，参数n的值为0时，选择器将选择不到任何匹配的元素。
+
+
+
+:nth-last-child(n)和上面类似，但是是从后往前寻找匹配项
+
+
+-->
+
+
+<body>
+
+
+<ol>
+    <li>元素</li>
+    <li>元素</li>
+    <li>元素</li>
+    <li>元素</li>
+    <li>元素</li>
+    <li>元素</li>
+    <li>元素</li>
+    <li>元素</li>
+    <li>元素</li>
+</ol>
+
+
+</body>
+</html>

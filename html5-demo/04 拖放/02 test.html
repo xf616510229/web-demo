@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖放测试</title>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .dustbin {
+            width: 150px;
+            height: 260px;
+            border: 1px solid salmon;
+            background-color: gray;
+            color: #ffffff;
+            font-size: 50px;
+            text-align: center;
+            line-height: 50px;
+            float: left;
+        }
+
+        .dragbox {
+            float: left;
+        }
+
+        .draglist {
+            width: 200px;
+            height: 35px;
+            border: 2px dashed gray;
+            line-height: 43px;
+            text-align: center;
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+
+        .dragremind {
+            padding: 20px;
+            width: 200px;
+            border: 1px solid salmon;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<!--
+draggable 属性：value:true 元素可以拖拽，否则不可以
+
+DataTransfer 对象：托拽对象用来传递的媒介，使用一般为Event.dataTransfer
+
+ondragstart 事件：当拖拽元素开始被拖拽的时候触发的事件，此事件作用在被拖曳元素上
+
+ondragenter 事件：当拖曳元素进入目标元素的时候触发的事件，此事件作用在目标元素上
+
+ondragover 事件：拖拽元素在目标元素上移动的时候触发的事件，此事件作用在目标元素上
+
+ondrop 事件：被拖拽的元素在目标元素上同时鼠标放开触发的事件，此事件作用在目标元素上
+
+ondragend 事件：当拖拽完成后触发的事件，此事件作用在被拖曳元素上
+
+Event.preventDefault() 方法：阻止默认的些事件方法等执行。在ondragover中一定要执行preventDefault()，否则ondrop事件不会被触发。另外，如果是从其他应用软件或是文件中拖东西进来，尤其是图片的时候，默认的动作是显示这个图片或是相关信息，并不是真的执行drop。此时需要用用document的ondragover事件把它直接干掉。
+Event.effectAllowed 属性：就是拖拽的效果。
+-->
+
+<div class="dustbin"><br/>垃<br/>圾<br/>箱</div>
+<div class="dragbox">
+    <div class="draglist" title="拖拽我" draggable="true">列表1</div>
+    <div class="draglist" title="拖拽我" draggable="true">列表2</div>
+    <div class="draglist" title="拖拽我" draggable="true">列表3</div>
+    <div class="draglist" title="拖拽我" draggable="true">列表4</div>
+    <div class="draglist" title="拖拽我" draggable="true">列表5</div>
+    <div class="draglist" title="拖拽我" draggable="true">列表6</div>
+</div>
+<div class="dragremind"></div>
+</body>
+</html>
+<script>
+    // 回收站
+    var eleDustbin = $(".dustbin")[0];
+    // 列表们
+    var eleDrags = $(".draglist");
+    // 拖拽提醒
+    var eleRemind = $(".dragremind")[0];
+    // 当前被拖拽的元素对象
+    var eleDrag = null;
+
+    // 当列表发生拖拽时（ev就是拖拽事件）
+    for (var i = 0; i < eleDrags.length; i++) {
+        eleDrags[i].ondragstart = function (ev) {
+            console.log("发生拖拽");
+            // 【添加一个键值对数据】
+            ev.dataTransfer.setData("Text", ev.target.innerHTML);
+            eleDrag = this;
+            return true;
+        };
+    }
+
+    // 拖拽元素进入垃圾箱上方时，做出的操作
+    eleDustbin.ondragenter = function (ev) {
+        console.log("拖拽元素进入垃圾箱上方");
+        this.style.backgroundColor = "red";
+        return true;
+    };
+
+    // 拖拽元素在垃圾箱上方移动做出的操作
+    eleDustbin.ondragover = function (ev) {
+        console.log("拖拽元素在垃圾箱上方移动");
+        ev.preventDefault(); // 防止触发浏览器的默认拖拽操作
+        return true;
+    };
+
+    // 拖拽元素在垃圾向上方，并松开鼠标时做出的操作
+    eleDustbin.ondrop = function (ev) {
+        console.log("鼠标被松开");
+        this.style.backgroundColor = "gray";
+        // 移除那个列表项
+        $(eleDrag).remove();
+        // 【获取添加的数据】 显示下面的信息
+        var text = ev.dataTransfer.getData("Text");
+        eleRemind.innerHTML = text + "被移除了";
+        return false;
+    };
+</script>

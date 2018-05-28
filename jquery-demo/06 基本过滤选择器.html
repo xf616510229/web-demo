@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本过滤选择器</title>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // :first
+//            $(".ulList li:first").css("font-size","40px");
+
+            // :last
+//            $("li:last").css("font-size","40px");
+
+            // :eq(index),选择序号为index的元素，从0开始
+//             $("ul li:eq(4)").css("font-size","30px");
+
+            // :gt(index)，选择序号大于index的元素
+//             $(".ulList li:gt(7)").css("font-size","40px");
+
+            // :lt(index)
+//            $("li:lt(6)").css("font-size","30px");
+
+            // :odd：选择奇数的元素
+//            $("li:odd").css("background","red");
+
+            // :even：选择偶数的元素 0也包括
+            $("li:even").css("background","green");
+        });
+
+    </script>
+</head>
+<body>
+<ul class="ulList">
+    <li>01男嘉宾</li>
+    <li>02男嘉宾</li>
+    <li>03男嘉宾</li>
+    <li>04男嘉宾</li>
+    <li>05男嘉宾</li>
+    <li>06男嘉宾</li>
+    <li>07男嘉宾</li>
+    <li>08男嘉宾</li>
+    <li>09男嘉宾</li>
+    <li>10男嘉宾</li>
+</ul>
+<ul class="ulList">
+    <li>01男嘉宾</li>
+    <li>02男嘉宾</li>
+    <li>03男嘉宾</li>
+    <li>04男嘉宾</li>
+    <li>05男嘉宾</li>
+    <li>06男嘉宾</li>
+    <li>07男嘉宾</li>
+    <li>08男嘉宾</li>
+    <li>09男嘉宾</li>
+    <li>10男嘉宾</li>
+</ul>
+</body>
+</html>

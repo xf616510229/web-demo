@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>only child</title>
+    <style>
+
+        .post > p:only-child {
+            background-color: orangered;
+        }
+
+        .post > span:only-of-type {
+            background-color: wheat;
+        }
+    </style>
+</head>
+<body>
+
+<!--
+
+如果该元素 的 父元素 只有它自己一个子元素， 那么就会被选中
+
+only-of-type : 规定了类型，该类型的子元素如果只有一个
+-->
+
+
+
+
+<div class="post">
+    <p>我是一个段落</p>
+    <span>span</span>
+</div>
+<div class="post">
+    <p>我是一个段落</p>
+</div>
+
+
+
+
+</body>
+</html>
