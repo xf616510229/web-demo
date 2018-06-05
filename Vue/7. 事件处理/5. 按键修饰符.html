@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>事件修饰符</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 只有在 `keyCode` 是 13 时调用 `vm.submit()` -->
+        <input v-on:keyup.13="submit">
+        <!-- 缩写语法，同上 -->
+        <input @keyup.enter="submit">
+
+        <p>所有的按键别名：</p>
+        <ul>
+            <li>.enter</li>
+            <li>.tab</li>
+            <li>.delete del/backspace</li>
+            <li>.esc</li>
+            <li>.space</li>
+            <li>.up</li>
+            <li>.left</li>
+            <li>.right</li>
+        </ul>
+
+        <p>可以通过全局 config.keyCodes 对象自定义按键修饰符别名：Vue.config.keyCodes.f1 = 112</p>
+    </div>
+
+    <script>
+        Vue.config.keyCodes.f1 = 112;
+        var app = new Vue({
+            el: '#app',
+            methods: {
+                submit: function () {
+                    alert('--触发成功--');
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

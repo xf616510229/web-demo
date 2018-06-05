@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Art Template</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/template-web.js"></script>
+</head>
+<body>
+
+<!--定义模板存放的div-->
+<div id="test"></div>
+<!--定义模板-->
+<script id="tpl-user" type="text/html">
+    {{set temp = user.name}}
+    <p>{{temp}}</p>
+    <% var temp = user.name; %>
+    <p>{{temp}}</p>
+</script>
+
+<!--必须-->
+<script>
+    var data = {
+        user: {
+            name: '张三',
+            type: 2,
+            age: 100
+        }
+    };
+    /*使用data数据渲染模板*/
+    $("#test").html(template('tpl-user', data));
+</script>
+</body>
+</html>

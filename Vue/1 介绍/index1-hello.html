@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HelloWorld</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<!--Vue.js 的核心是一个允许采用简洁的模板语法来声明式地将数据渲染进 DOM 的系统：-->
+<div id="app">
+    {{ message }}
+</div>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!'
+        }
+    })
+</script>
+</body>
+</html>
+<!--
+这类似一个字符串模板，但是vue在背后做了大量的操作.
+
+数据和DOM已经关联，所有东西都是响应式的
+
+动态改变 app.message = xxx 会直接被响应到页面上
+
+-->

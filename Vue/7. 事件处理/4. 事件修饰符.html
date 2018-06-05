@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>事件修饰符</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>在处理事件时，在处理中调用event.preventDefault()或者event.stopPropagation()，是比较常见的需求。虽然可以在方法中实现这些细节，但是方法通常用于完成数据逻辑，而不去处理DOM事件细节</p>
+        <p>所以，Vue提供了
+            <b>事件修饰符</b>修饰符是由点开头的指令后缀来表示的</p>
+        <ul>
+            <li>.stop - 对应event.stopPropagation()方法，用于阻止事件冒泡</li>
+            <li>.prevent - 对应event.preventDefault()方法，用于取消元素的默认事件，比如submit的提交事件</li>
+            <li>.capture - 事件捕获模式（元素自身触发的事件先在此处处理，然后才交由内部/外部元素进行处理，双向，先捕获后冒泡）</li>
+            <li>.self - 如果是元素自身则触发，如果是内部元素冒泡，不处理</li>
+            <li>.once - 绑定事件一次（触发后移除事件）</li>
+            <li>.passive - addEventListener 中的 passive选项</li>
+        </ul>
+        <!-- 阻止单击事件继续传播 -->
+        <a v-on:click.stop="doThis">...</a>
+        <!-- 提交事件不再重载页面 -->
+        <form v-on:submit.prevent="onSubmit">...</form>
+        <!-- 修饰符可以串联 -->
+        <a v-on:click.stop.prevent="doThat">...</a>
+        <!-- 添加事件监听器时使用事件捕获模式 -->
+        <!-- 即元素自身触发的事件先在此处处理，然后才交由内部元素进行处理 -->
+        <div v-on:click.capture="doThis">...</div>
+        <!-- 只当在 event.target 是当前元素自身时触发处理函数 -->
+        <!-- 即事件不是从内部元素触发的 -->
+        <div v-on:click.self="doThat">...</div>
+        <!-- 滚动事件的默认行为 (即滚动行为) 将会立即触发 -->
+        <!-- 而不会等待 `onScroll` 完成  -->
+        <!-- 这其中包含 `event.preventDefault()` 的情况，通常用于提升移动端的体验，passive和prevent 相反，告诉浏览器我们不想阻止默认的事件 -->
+        <div v-on:scroll.passive="onScroll">...</div>
+    </div>
+
+    <script>
+    </script>
+
+</body>
+
+</html>

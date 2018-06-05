@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建vue实例</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div id="app">
+    {{ message }}
+    <br>
+    <span v-once>{{message}}</span> <!-- v-once指令 代表只可以渲染一次，如果data发生改变，不会重新渲染 -->
+    <hr>
+
+
+    {{html}} <!-- vue只可以渲染文本，要想渲染html代码，需要加入v-html指令 -->
+    <br>
+    <span v-html="html"></span> <!-- 注意，不要使用v-html复合局部模板 -->
+    <!--请只对可信任的html进行html插值，防止xss攻击，绝不要对用户提供的内容使用插值-->
+    <hr>
+
+
+    <!--Mustache语法不可以是用在html属性上，如果要操作html属性，需要使用v-bind指令 -->
+    <div v-bind:id="dynamicId">我是div</div>
+    <button v-bind:disabled="isButtonDisabled">Button</button>
+    <!--
+    如果 isButtonDisabled 的值是 null、undefined 或 false，则 disabled 特性甚至不会被包含在渲染出来的 <button> 元素中。
+    -->
+
+    <hr>
+
+    <!--使用javascript表达式，只可以使用单个表达式，比如三元运算符，但不可以使用多个表达式，比如if语句-->
+    <span>{{'发送的消息为：'+message}}</span>
+    <div v-bind:id="'list-' + id">我是div</div>
+    <div>{{'表达式不应该访问用户自定义的全局变量，这是一个错误的演示：' + G_Test}}</div>
+
+
+    <hr>
+
+    <!--指令 Directives -->
+    <p v-if="seen">现在你看到我了</p> <!--if指令-->
+    <p v-for="li in list">{{li}}</p>
+
+
+    <hr>
+
+    <!--绑定事件-->
+    <a v-on:click="doSomething">我是被绑定事件的a标签</a>
+
+    <hr>
+
+
+    <!--修饰符 modifiers-->
+    <!--即 event.preventDefault() 阻止默认事件-->
+    <form v-on:submit.prevent="onSubmit"> <!--回车-->
+        <input type="text">
+    </form>
+
+
+</div>
+<script>
+    var G_Test = "我是全局变量";
+    var app = new Vue({
+        el: "#app",
+        data: {
+            message: "李四",
+            html: '<input type="text"/>',
+            dynamicId: "testId",
+            isButtonDisabled: true, // true false null 'disable'
+            id: 100,
+            seen: true,
+            list: ['A', 'B', 'C']
+        },
+        methods: {
+            doSomething: function () {
+                alert('doSomething');
+            },
+            onSubmit : function () {
+                alert('默认事件被阻止');
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

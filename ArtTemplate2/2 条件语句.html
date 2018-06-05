@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Art Template</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/template-web.js"></script>
+</head>
+<body>
+
+<!--定义模板存放的div-->
+<div id="test"></div>
+<!--定义模板-->
+<script id="tpl-user" type="text/html">
+    {{if user.type==0}}
+    <p>{{user.name}}是管理员</p>
+    {{else if user.type == 1}}
+    <p>{{user.name}}是用户</p>
+    {{else}}
+    <p>{{user.name}}是游客</p>
+    {{/if}}
+
+    <!--使用原始语法-->
+    <% if (user.type==0) { %>
+    <p>{{user.name}}是管理员</p>
+    <% } else if (user.type == 1) { %>
+    <p>{{user.name}}是用户</p>
+    <% } else { %>
+    <p>{{user.name}}是游客</p>
+    <% } %>
+</script>
+
+<!--必须-->
+<script>
+    var data = {
+        user: {
+            name: '张三',
+            type: 2
+        }
+    };
+    /*使用data数据渲染模板*/
+    $("#test").html(template('tpl-user', data));
+</script>
+</body>
+</html>

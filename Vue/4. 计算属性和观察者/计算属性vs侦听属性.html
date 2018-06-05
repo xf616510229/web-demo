@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>侦听属性</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div id="app">
+    {{fullName}}
+</div>
+
+<div id="demo">
+    {{fullName}}
+</div>
+
+<div id="vm">
+    {{fullName}}
+</div>
+
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            firstName: '四',
+            lastName: '李',
+            fullName: '四李'
+        },
+        // 侦察属性，对firstName和lastName进行侦听
+        watch: {
+            firstName: function (val) {
+                this.fullName = val + ' ' + this.lastName
+            },
+            lastName: function (val) {
+                this.fullName = this.firstName + ' ' + val
+            }
+        }
+    });
+
+   // 在控制台修改lastName 和 firstName， FullName会进行改变，这是因为侦听属性的缘故
+    // 上面的代码是命令式的，并且重复的，我们可以使用计算属性来替代它更好。
+
+    var demo = new Vue({
+        el: '#demo',
+        data: {
+            firstName: 'Foo',
+            lastName: 'Bar'
+        },
+        computed: {
+            fullName: function () {
+                return this.firstName + ' ' + this.lastName
+            }
+        }
+    });
+
+    // 计算属性默认调用getter方法，但是其实他也有setter方法
+    // 上面的代码也可以写成这样
+    var vm = new Vue({
+        el: '#vm',
+        data: {
+            firstName: 'Foo',
+            lastName: 'Bar'
+        },
+        computed: {
+            fullName: {
+                get: function () {
+                    return this.firstName + ' ' + this.lastName
+                },
+                set: function (newValue) {
+                    var names = newValue.split(' ');
+                    this.firstName = names[0];
+                    this.lastName = names[names.length - 1]
+                }
+            }
+        }
+    })
+
+</script>
+
+</body>
+</html>

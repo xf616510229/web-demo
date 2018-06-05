@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Art Template</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/template-web.js"></script>
+</head>
+<body>
+
+<!--定义模板存放的div-->
+<div id="test"></div>
+<!--定义模板-->
+<script id="tpl-user" type="text/html">
+
+    <h2>{{user}}</h2> <!--{"name":"张三"}-->
+    <h2>{{user.name}}</h2><!--张三-->
+    <h2>{{user['name']}}</h2><!--张三-->
+    <h2>{{user ? 1 : 2}}</h2><!--1-->
+    <h2>{{user || 1}}</h2><!--{"name":"张三"}-->
+    <h2>{{'name='+user.name}}</h2><!--name=张三-->
+
+    <hr>
+
+    <!--原始语法-->
+    <h2><%=person%></h2>
+    <h2><%=person.name%></h2>
+    <h2><%=person['name']%></h2>
+    <h2><%=person?1:2%></h2>
+    <h2><%='name'+ person.name%></h2>
+
+    <hr>
+
+    <!--模板一级特殊变量-->
+    <h2>{{$data['user']}}</h2>
+
+    <hr>
+
+    <!--原文输出-->
+    <h2>{{@user}}</h2>
+    <h2>{{@user.name}}</h2>
+    <h2><%-user%></h2>
+    <h2><%-user.name%></h2>
+
+
+    <h2>{{#user}}</h2><!--[object Object]-->
+    <h2>{{#user.name}}</h2><!--张三-->
+    <h2><%=#user%></h2><!--[object Object]-->
+    <h2><%=#user.name%></h2><!--张三-->
+
+    <hr>
+
+</script>
+
+<!--必须-->
+<script>
+    var data = {
+        user: {
+            name : '张三'
+        },
+        person: {
+            name: '李四'
+        }
+    };
+    /*使用data数据渲染模板*/
+    $("#test").html(template('tpl-user', data));
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>attr()设置属性</title>
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("a").attr("href", "http://www.baidu.com");
+            });
+        });
+    </script>
+</head>
+<body>
+<button>点我把我百度变为我的个人网站</button>
+<a href="http://feathers.me">我的个人网站</a>
+</body>
+</html>

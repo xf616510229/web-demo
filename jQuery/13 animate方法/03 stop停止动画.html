@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>stop停止动画</title>
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: cornflowerblue;
+            position: absolute;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("#box1").animate({
+                    left: '1000px'
+                }, 10*1000);
+            });
+            $("#stop").click(function () {
+                //$("#box1").stop();
+                /**
+                 * stopAll,goToEnd 两个参数
+                 * 1. 动画在结束时，结束队列中的所有动画
+                 * 2. 结束动画时，是否直接完成动画
+                 */
+                $("#box1").stop(false, true);
+            });
+        });
+    </script>
+</head>
+<body>
+<button id="btn1">开始运动-匀速动画</button>
+<button id="stop">stop animate</button>
+<div class="box" id="box1"></div>
+</body>
+</html>
+<!--
+
+注意：
+stop方法适用于所有的动画效果函数，包括滑动、淡入淡出
+
+-->
