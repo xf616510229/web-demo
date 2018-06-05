@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BUG-图像扭曲</title>
+    <style>
+        canvas {
+            width: 200px;
+            height: 200px;
+            border: solid;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="c"></canvas>
+    
+<script type="text/javascript">
+    var c = document.getElementById("c");
+    var cxt = c.getContext("2d");
+    cxt.fillStyle = "#FF0000";
+    cxt.fillRect(0, 0, 150, 75);
+
+    /*
+        上述代码绘制一个150*75的矩形，但是在浏览器中的显示却不是
+        这是因为canvas不可以使用css指定width和height，如果使用则可能造成图像扭曲
+        只能使用html属性width和height
+        严格来说，canvas只有两个属性，width和height，可以通过JS的DOM操作进行设置
+     */
+</script>    
+</body>
+</html>

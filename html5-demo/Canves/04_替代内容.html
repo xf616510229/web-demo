@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>将此页面使用低版本浏览器打开</title>
+</head>
+<body>
+        
+    <canvas id="c1" width="200px" height="200px" style="border: 1px solid black">
+        Sorry,你的浏览器版本太低，无法显示此内容 <img src="#">
+    </canvas>
+    
+<script type="text/javascript">
+    var c1 = document.getElementById("c1");
+    var ctx1 = c1.getContext("2d");
+    ctx1.fillStyle = "#FF0000";
+    ctx1.fillRect(0, 0, 150, 75);
+
+</script>
+</body>
+</html>
